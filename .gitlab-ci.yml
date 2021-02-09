@@ -1,11 +1,12 @@
-image: alpine:latest
-
+# This file is a template, and might need editing before it works on your project.
 pages:
   stage: deploy
   script:
-  - echo 'Nothing to do...'
+    - mkdir .public
+    - cp -r * .public
+    - mv .public public
   artifacts:
     paths:
-    - master
+      - public
   only:
-  - master
+    - master
